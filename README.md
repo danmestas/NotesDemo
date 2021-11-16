@@ -37,5 +37,7 @@
 
 9. Open the root of this repository in VSCode.
 
+10. Create your initial migration: `$ dotnet ef migrations add InitialCreate`
+
 
 > Written with [StackEdit](https://stackedit.io/).
