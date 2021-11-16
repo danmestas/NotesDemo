@@ -35,7 +35,7 @@
 
 8. Clone this repository `$ git clone https://github.com/danmestas/ORMDemo.git`
 
-9. Open the root of this repository in VSCode. 
+9. Open the root of this repository in VSCode.
 
 
 > Written with [StackEdit](https://stackedit.io/).
