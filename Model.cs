@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCoreBasic
+namespace NotesDemo
 {
     public class GardenContext : DbContext
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCoreBasic
+namespace NotesDemo
 {
     class Program
     {
