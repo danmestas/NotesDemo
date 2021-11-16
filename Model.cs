@@ -1,54 +1,29 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 using Microsoft.EntityFrameworkCore;
 
 namespace NotesDemo
 {
-    public class GardenContext : DbContext
+    public class NotesContext : DbContext
     {
-        public DbSet<Garden> Gardens { get; set; }
-        public DbSet<Bed> Beds { get; set; }
-        public DbSet<Crop> Crops { get; set; }
-        public DbSet<CropAssignment> CropAssignments { get; set; }
-
+        public DbSet<User> Users { get; set; }
+        // public DbSet<Note> Notes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Server=localhost,1433; Database=GardenDb1;User=sa; Password=MyPass@word");
+            => options.UseSqlServer("Server=localhost,1433; Database=NotesDb;User=sa; Password=MyPass@word");
     }
 
-    public class Garden
+    public class User
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int GardenId { get; set; }
-        public string Name { get; set; }
+        public int UserId { get; set; }
+        public string Username { get; set; }
+        public string Title { get; set; }
 
-        public List<Bed> Beds { get; } = new List<Bed>();
+        [DefaultValue(false)]
+        public bool IsAdmin { get; set; } = false;
+
     }
 
-    public class Bed
-    {
-        public int BedId { get; set; }
-        public int Number { get; set; }
-
-        public int GardenId { get; set; }
-        public Garden Garden { get; set; }
-        public List<CropAssignment> CropAssignments { get; set; }
-    }
-
-    public class Crop
-    {
-        public int CropId { get; set; }
-        public string Name  { get; set; }
-        public List<CropAssignment> CropAssignments { get; set; }
-    }
-
-    public class CropAssignment
-    {
-        public int CropAssignmentId { get; set; }
-        public int CropId { get; set; }
-        public Crop Crop { get; set; }
-        public int BedId { get; set; }
-        public Bed Bed { get; set; }
-        public int Year { get; set; }
-    }
 }
