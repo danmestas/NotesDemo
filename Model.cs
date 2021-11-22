@@ -22,6 +22,9 @@ namespace NotesDemo
         public string Title { get; set; }
         [DefaultValue(false)]
         public bool IsAdmin { get; set; } = false;
+        [DefaultValue(true)]
+        public bool IsActive { get; set; } = true;
     }
+
 
 }
